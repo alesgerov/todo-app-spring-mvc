@@ -1,4 +1,0 @@
-
-Userlerle bagli olan
-///https://github.com/javidbaghir/employee.az/tree/a7d75d4bc77eb684fa964e5cf498d7018e3e5369/src/main/java/az/employee
-///TODO her hansi sehifeye girende login olmasan yonlendirsin logine

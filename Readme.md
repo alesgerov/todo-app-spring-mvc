@@ -9,3 +9,6 @@ Todos for this application(which is not so difficult):
 - Password changing.
 - Reseting password when you forgot.
 - I will add these functions.
+
+If you have any question or idea please contact me:
+- https://linkedin.com/in/tofigalasgarov/

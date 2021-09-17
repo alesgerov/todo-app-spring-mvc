@@ -11,4 +11,4 @@ Todos for this application(which is not so difficult):
 - I will add these functions.
 
 If you have any question or idea please contact me:
-- https://linkedin.com/in/tofigalasgarov/
+- https://linkedin.com/in/tofigalasgarov/ 

@@ -6,9 +6,7 @@ Features:
 - If task of deadline is after 1 day program sends notification(If user activated notification).
 
 Todos for this application(which is not so difficult):
-- Password changing.
-- Reseting password when you forgot.
-- I will add these functions.
+- Resetting password when you forgot.
 
 If you have any question or idea please contact me:
 - https://linkedin.com/in/tofigalasgarov/ 

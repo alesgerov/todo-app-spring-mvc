@@ -13,6 +13,7 @@
 <body>
     <a href="/task/add">Add task</a>
     <a href="/tasks">Tasks</a>
+    <a href="/password/change">Change password</a>
     <a href="/logout">Logout</a>
 </body>
 </html>

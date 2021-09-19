@@ -1,14 +1,19 @@
-<%@ page import="java.time.LocalDateTime" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Tofig Alasgarov
+  Date: 9/18/2021
+  Time: 10:18 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <html>
 <head>
-    <title>Add task</title>
+    <title>Password changing</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
     <!--===============================================================================================-->
@@ -31,76 +36,41 @@
     <link rel="stylesheet" type="text/css" href="/css/util.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <style>
-        .white {
-            color: white;
-        }
-
-        .big {
-            size: 50px;
+        .error{
+            margin-left: 100px;
+            color: red;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            var dtToday = new Date();
-
-            var month = dtToday.getMonth() + 1;
-            var day = dtToday.getDate();
-            var year = dtToday.getFullYear();
-
-            if (month < 10)
-                month = '0' + month.toString();
-            if (day < 10)
-                day = '0' + day.toString();
-
-            var maxDate = year + '-' + month + '-' + day;
-
-
-            alert(maxDate);
-            $('#txtDate').attr('min', maxDate);
-
-
-        });
-    </script>
-
-
-    <!--===============================================================================================-->
-
-
 </head>
 <body>
 
 <div class="limiter">
-    <a href="/task/add">Add task</a>
-    <a href="/tasks">Tasks</a>
-    <a href="/password/change">Change password</a>
-    <a href="/logout">Logout</a>
-    <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Add task
+					Change password
 				</span>
-            <form:form cssClass="wrap-login100 p-t-30 p-b-50" modelAttribute="form">
-                <div class="mb-3">
-                    <label for="title" class="form-label white">Task title</label>
-                    <form:input path="title" cssClass="form-control" id="title" placeholder="Task title"
-                                required="true"/>
+            <form:form cssClass="login100-form validate-form p-b-33 p-t-5" modelAttribute="form">
+                <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <form:password path="password" cssClass="input100"  placeholder="Password"/>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    <form:errors path="password" cssClass="ui-state-error error"/>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label white">Task description</label>
-                    <form:textarea path="description" cssClass="form-control" id="description"
-                                   placeholder="Task description" required="true"/>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <form:password path="newPassword" cssClass="input100"  placeholder="New password" />
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    <form:errors path="newPassword" cssClass="ui-state-error error" />
                 </div>
-                <div class="mb-3">
-                    <label for="needNotification" class="form-label white">Do you need notification?</label>
-                    <form:checkbox path="needNotification" cssClass="form-check big" id="needNotification"/>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <form:password path="confirmPassword" cssClass="input100"  placeholder="Confirm password" />
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    <form:errors path="confirmPassword" cssClass="ui-state-error error" />
                 </div>
-
-                <label for="txtDate" class="form-label white">Deadline</label>
-                <input type="date" id="txtDate" name="deadline">
-
+                <c:if test='${requestScope.containsKey("error")}'>
+                    <p class="ui-state-error error">${error}</p>
+                </c:if>
                 <div class="container-login100-form-btn m-t-32">
-                    <input type="submit" class="login100-form-btn" title="Add task">
+                    <input type="submit" class="login100-form-btn" title="Change">
                 </div>
             </form:form>
         </div>

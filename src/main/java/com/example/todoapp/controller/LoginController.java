@@ -59,9 +59,8 @@ public class LoginController {
 
 
     @PostMapping
-    public ModelAndView loginPost(@Validated @ModelAttribute(name = "form") LoginForm form, BindingResult result,HttpServletRequest request){
+    public ModelAndView loginPost(@Validated @ModelAttribute(name = "form") LoginForm form, BindingResult result){
         ModelAndView modelAndView=new ModelAndView();
-        String reffere=request.getHeader("Referer");
         if (result.hasErrors()){
             modelAndView.setViewName("login");
         }else if(loginService.checkLogin(form)) {

@@ -71,7 +71,8 @@
                     <input type="submit" class="login100-form-btn" title="Login">
                 </div>
             </form:form>
-            <a href="/registration" class="error">Registration</a>
+            <a href="/registration" class="error">Registration</a><br>
+            <a href="/forgot/email/verify" class="error">Forgot password?</a>
         </div>
     </div>
 </div>

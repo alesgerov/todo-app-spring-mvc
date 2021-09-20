@@ -68,4 +68,14 @@ public class UserTokenService {
         mail.sendMail(user.getEmail(),buffer.toString());
     }
 
+    public void sendTokenForForgot(TodoUser user, HttpServletRequest request){
+        int length=request.getRequestURI().length();
+        StringBuffer  buffer=request.getRequestURL().reverse().delete(0,length-1).reverse();
+        buffer.append("forgot/password?token=");
+        String token= CreateToken.createToken();
+        buffer.append(token);
+        saveToken(user,token);
+        mail.sendMail(user.getEmail(),buffer.toString());
+    }
+
 }
